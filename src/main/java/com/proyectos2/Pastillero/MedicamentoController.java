@@ -25,7 +25,7 @@ public class MedicamentoController {
 
         List<Medicamento> medicamentos = repository.findAll();
 
-
+        medicamentos.add(new Medicamento("JAJAS",70));
 
         String hola = "Hola mundo";
 
