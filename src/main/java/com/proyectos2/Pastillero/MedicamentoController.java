@@ -25,7 +25,7 @@ public class MedicamentoController {
 
         List<Medicamento> medicamentos = repository.findAll();
 
-        
+
 
         String hola = "Hola mundo";
 
