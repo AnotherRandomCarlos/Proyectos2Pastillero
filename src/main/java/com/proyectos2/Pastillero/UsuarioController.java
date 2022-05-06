@@ -10,11 +10,11 @@ import java.util.PrimitiveIterator;
 public class UsuarioController {
 
     @Autowired
-    private UsuarioRepository repository;
+    private pruebaidRepository repository;
 
 
     @GetMapping("/saludo2")
-    public List<Usuario> saludo(){
+    public List<pruebaid> saludo(){
 
 //        List<tablaprueba> lista = repository2.findAll();
 //
@@ -22,7 +22,7 @@ public class UsuarioController {
 //
 //        repository2.save(usuario);
 
-        List <Usuario> lista = repository.findAll();
+        List <pruebaid> lista = repository.findAll();
 
 
         return lista;
