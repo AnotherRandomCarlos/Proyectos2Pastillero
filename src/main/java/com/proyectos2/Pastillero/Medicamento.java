@@ -3,54 +3,30 @@ package com.proyectos2.Pastillero;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Medicamentos")
+@Table(name="medicamentos10")
 public class Medicamento {
 
     @Id
-    @Column(
-            name = "id_medicamento"
-    )
-    private Integer id_medicamento;
-
-    @Column(
-            name = "id_usuario"
-    )
+    private int id_medicamento;
+    @Column
     private int id_usuario;
-
-    @Column(
-            name = "nombre"
-    )
+    @Column
     private String nombre;
-
-    @Column(
-            name = "descripcion"
-    )
+    @Column
     private String descripcion;
-
-    @Column(
-            name = "dias_semana"
-    )
+    @Column
     private String dias_semana;
-
-    @Column(
-            name = "horas_entre_toma"
-    )
+    @Column
     private int horas_entre_toma;
-
-    @Column(
-            name = "pastillas_toma"
-    )
+    @Column
     private int pastillas_toma;
-
-    @Column(
-            name = "pastillas_caja"
-    )
+    @Column
     private int pastillas_caja;
 
     public Medicamento() {
     }
 
-    public Medicamento(Integer id_medicamento, int id_usuario, String nombre, String descripcion, String dias_semana, int horas_entre_toma, int pastillas_toma, int pastillas_caja) {
+    public Medicamento(int id_medicamento, int id_usuario, String nombre, String descripcion, String dias_semana, int horas_entre_toma, int pastillas_toma, int pastillas_caja) {
         this.id_medicamento = id_medicamento;
         this.id_usuario = id_usuario;
         this.nombre = nombre;
@@ -61,7 +37,7 @@ public class Medicamento {
         this.pastillas_caja = pastillas_caja;
     }
 
-    public Integer getId_medicamento() {
+    public int getId_medicamento() {
         return id_medicamento;
     }
 

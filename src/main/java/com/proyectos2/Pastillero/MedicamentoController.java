@@ -26,7 +26,7 @@ public class MedicamentoController {
 
         //medicamentos.add(new Medicamento("JAJAS",70));
 
-        medicamentos.add(medicamento);
+        //medicamentos.add(medicamento);
 
         return medicamentos;
     }
