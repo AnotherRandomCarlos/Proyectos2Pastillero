@@ -2,8 +2,10 @@ package com.proyectos2.Pastillero;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,20 +17,64 @@ public class MedicamentoController {
     @Autowired
     private MedicamentoRepository repository;
 
-    @GetMapping("/saludo")
-    public List<Medicamento> saludo(){
+    @GetMapping("/obtenerMedicamentos")
+    public List<Medicamento> obtener(){
 
-        Medicamento medicamento = new Medicamento(10, 4, "medicamento Prueba", "descripcion","LMX", 2,1,50);
+        List <Medicamento> lista = repository.findAll();
 
-        //repository.delete(medicamento);
+        return lista;
+    }
 
-        List<Medicamento> medicamentos = repository.findAll();
+    /*Funcion para aniadir medicamentos*/
+    @PostMapping(path = "/nuevoMedicamento",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity aniadirMedicamento (@RequestBody Medicamento nuevoMedicamento) {
 
-        //medicamentos.add(new Medicamento("JAJAS",70));
+        repository.save(nuevoMedicamento);
 
-        //medicamentos.add(medicamento);
+        return new ResponseEntity(HttpStatus.CREATED);
+    }
 
-        return medicamentos;
+
+    /*Funcion para modificar medicamento*/
+    @PutMapping(path = "/modificarMedicamento",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity modificarMedicamento (@RequestBody Medicamento medicamentoModificado) {
+
+        repository.save(medicamentoModificado);
+
+        return new ResponseEntity(HttpStatus.ACCEPTED);
+    }
+
+
+
+    /*Funcion para eliminar medicamento por su id*/
+    @DeleteMapping(path = "/eliminarMedicamento/{id}")
+    public ResponseEntity eliminarUsuario (@PathVariable int id) {
+
+        repository.deleteById(id);
+
+        return new ResponseEntity(HttpStatus.ACCEPTED);
+    }
+
+
+    /*Funcion para encontrar medicamento que cumplan condicion de user id*/
+    @GetMapping("/encontrarMedicamentos/{user_id}")
+    public List<Medicamento> encontrar(@PathVariable int user_id){
+
+        List <Medicamento> lista = repository.findAll();
+
+        List <Medicamento> lista2 = new ArrayList<Medicamento>();
+
+        for(Medicamento medicamento : lista) {
+            if(medicamento.getId_usuario()==user_id){
+                lista2.add(medicamento);
+            }
+        }
+
+        return lista2;
     }
 
 

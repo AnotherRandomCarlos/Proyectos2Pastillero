@@ -3,10 +3,16 @@ package com.proyectos2.Pastillero;
 import javax.persistence.*;
 
 @Entity
-@Table(name="medicamentos10")
+@Table(name="tabla_medicamento")
 public class Medicamento {
 
     @Id
+    @SequenceGenerator(name="tabla_medicamento_id_medicamento_seq",
+            sequenceName="tabla_medicamento_id_medicamento_seq",
+            allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator="tabla_medicamento_id_medicamento_seq")
+    @Column(updatable = false)
     private int id_medicamento;
     @Column
     private int id_usuario;
@@ -26,8 +32,7 @@ public class Medicamento {
     public Medicamento() {
     }
 
-    public Medicamento(int id_medicamento, int id_usuario, String nombre, String descripcion, String dias_semana, int horas_entre_toma, int pastillas_toma, int pastillas_caja) {
-        this.id_medicamento = id_medicamento;
+    public Medicamento(int id_usuario, String nombre, String descripcion, String dias_semana, int horas_entre_toma, int pastillas_toma, int pastillas_caja) {
         this.id_usuario = id_usuario;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -39,10 +44,6 @@ public class Medicamento {
 
     public int getId_medicamento() {
         return id_medicamento;
-    }
-
-    public void setId_medicamento(int id_medicamento) {
-        this.id_medicamento = id_medicamento;
     }
 
     public int getId_usuario() {

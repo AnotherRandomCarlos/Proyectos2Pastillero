@@ -13,8 +13,6 @@ import java.util.List;
 @SpringBootApplication
 public class PastilleroApplication implements CommandLineRunner{
 
-	@Autowired
-	private MedicamentoRepository repository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(PastilleroApplication.class, args);
@@ -22,18 +20,6 @@ public class PastilleroApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-
-
-		//Medicamento medicamento = new Medicamento("Paracetamol",200);
-
-
-		//repository.delete(medicamento);
-
-		List<Medicamento> medicamentos = repository.findAll();
-
-		medicamentos.forEach(System.out :: println);
-
-		System.out.println(repository.count());
 
 	}
 }

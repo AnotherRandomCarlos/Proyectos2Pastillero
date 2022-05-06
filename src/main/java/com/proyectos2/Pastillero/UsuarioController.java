@@ -17,8 +17,6 @@ public class UsuarioController {
     @Autowired
     private UsuarioRepository repository;
 
-
-
     @GetMapping("/obtenerUsuarios")
     public List<Usuario> obtener(){
 
