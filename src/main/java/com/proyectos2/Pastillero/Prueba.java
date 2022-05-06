@@ -2,28 +2,29 @@ package com.proyectos2.Pastillero;
 
 
 import javax.persistence.*;
+import javax.print.DocFlavor;
 
 @Entity
 @Table(name="Prueba")
 public class Prueba {
 
     @Id
-    private Integer id;
+    private String id;
     private String nombre;
 
     public Prueba() {
     }
 
-    public Prueba(int id, String nombre) {
+    public Prueba(String id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
