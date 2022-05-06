@@ -18,7 +18,6 @@ public class UsuarioController {
 
 
 
-
     @GetMapping("/obtenerUsuarios")
     public List<Usuario> obtener(){
 
@@ -27,95 +26,52 @@ public class UsuarioController {
         return lista;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    @GetMapping("/saludo2")
-    public List<pruebaid> saludo(){
-
-//        List<tablaprueba> lista = repository2.findAll();
-//
-//        tablaprueba usuario = new tablaprueba("loco", 12, "loco apellido");
-//
-//        repository2.save(usuario);
-
-        //List <pruebaid> lista = repository.findAll();
-
-
-        List <pruebaid> lista = null;
-
-        return lista;
-    }
-
-    @GetMapping("/saludo3")
-    public void saludo2(){
-
-        pruebaid usuarionuevo = new pruebaid("roberto",20);
-
-
-        //repository.save(usuarionuevo);
-
-
-        return;
-    }
-
-    @GetMapping("/saludo4")
-    public Optional<pruebaid> saludo4(){
-
-        //Optional<pruebaid> usuario = repository.findById(2);
-
-        Optional<pruebaid> usuario = null;
-
-        return usuario;
-    }
-
-    /*Funcion para eliminar usuario*/
-    @DeleteMapping(path = "/eliminarUsuario/{id}")
-    public ResponseEntity eliminarUsuario (@PathVariable int id) {
-
-        /*------------Primera parte, obtener la lista de usuarios leyendo el json existente-----------*/
-
-        repository.deleteById(id);
-
-
-
-        return new ResponseEntity(HttpStatus.ACCEPTED);
-    }
-
-
     /*Funcion para aniadir usuario*/
     @PostMapping(path = "/nuevoUsuario",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity aniadirUsuario (@RequestBody pruebaid nuevoUsuario) {
+    public ResponseEntity aniadirUsuario (@RequestBody Usuario nuevoUsuario) {
 
-
-        //repository.save(nuevoUsuario);
-
+        repository.save(nuevoUsuario);
 
         return new ResponseEntity(HttpStatus.CREATED);
     }
+
 
     /*Funcion para modificar usuario*/
     @PutMapping(path = "/modificarUsuario",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity modificarUsuario (@RequestBody pruebaid usuarioModificado) {
+    public ResponseEntity modificarUsuario (@RequestBody Usuario usuarioModificado) {
 
-
-
-        //repository.save(usuarioModificado);
+        repository.save(usuarioModificado);
 
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
+
+
+
+    /*Funcion para eliminar usuario por su id*/
+    @DeleteMapping(path = "/eliminarUsuario/{id}")
+    public ResponseEntity eliminarUsuario (@PathVariable int id) {
+
+        repository.deleteById(id);
+
+        return new ResponseEntity(HttpStatus.ACCEPTED);
+    }
+
+
+    /*Funcion para encontrar usuarios que cumplan condicion*/
+    @GetMapping("/encontrarUsuarios")
+    public List<Usuario> encontrar(){
+
+        Optional<pruebaid> usuario = null;
+
+        List<Usuario> usuarios = repository.findByName("Carlos");
+
+        return usuarios;
+    }
+
 
 
 }
