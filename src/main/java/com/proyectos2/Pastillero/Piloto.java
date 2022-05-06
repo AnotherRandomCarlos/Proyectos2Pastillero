@@ -8,8 +8,11 @@ public class Piloto {
 
     @Id
     private String Nombre;
+    @Column
     private String Apellidos;
+    @Column
     private int Edad;
+    @Column
     private String Correo;
 
     public Piloto() {
