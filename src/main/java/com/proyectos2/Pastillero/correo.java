@@ -4,7 +4,7 @@ package com.proyectos2.Pastillero;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Correos")
+@Table(name="correos")
 public class correo {
 
     @Id
