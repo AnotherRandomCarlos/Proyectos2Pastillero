@@ -10,6 +10,7 @@ public class Prueba {
 
     @Id
     private String id;
+    @Column
     private String nombre;
 
     public Prueba() {
