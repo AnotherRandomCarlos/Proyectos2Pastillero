@@ -17,7 +17,7 @@ public class NotificacionController {
     @Autowired
     private NotificacionRepository repository;
 
-    @GetMapping("/obtenerNotifiaciones")
+    @GetMapping("/obtenerNotificaciones")
     public List<Notificacion> obtenerNotificaciones(){
 
         List <Notificacion> lista = repository.findAll();
