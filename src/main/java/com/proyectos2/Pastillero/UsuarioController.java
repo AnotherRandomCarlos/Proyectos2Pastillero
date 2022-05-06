@@ -1,7 +1,11 @@
 package com.proyectos2.Pastillero;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Optional;
@@ -50,5 +54,18 @@ public class UsuarioController {
 
 
         return usuario;
+    }
+
+    /*Funcion para eliminar usuario*/
+    @DeleteMapping(path = "/eliminarUsuario/{id}")
+    public ResponseEntity eliminarUsuario (@PathVariable int id) {
+
+        /*------------Primera parte, obtener la lista de usuarios leyendo el json existente-----------*/
+
+        repository.deleteById(id);
+
+
+
+        return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 }
