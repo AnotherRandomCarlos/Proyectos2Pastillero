@@ -12,13 +12,39 @@ public class Medicamento {
     )
     private long id_medicamento;
 
-
+    @Column(
+            name = "id_usuario"
+    )
     private int id_usuario;
+
+    @Column(
+            name = "nombre"
+    )
     private String nombre;
+
+    @Column(
+            name = "descripcion"
+    )
     private String descripcion;
+
+    @Column(
+            name = "dias_semana"
+    )
     private String dias_semana;
+
+    @Column(
+            name = "horas_entre_toma"
+    )
     private int horas_entre_toma;
+
+    @Column(
+            name = "pastillas_toma"
+    )
     private int pastillas_toma;
+
+    @Column(
+            name = "pastillas_caja"
+    )
     private int pastillas_caja;
 
     public Medicamento() {
