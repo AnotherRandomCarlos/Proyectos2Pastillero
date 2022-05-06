@@ -26,6 +26,7 @@ public class Medicamento {
     @Column
     private int pastillas_caja;
 
+    
     public Medicamento() {
     }
 
