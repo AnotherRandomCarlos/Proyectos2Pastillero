@@ -10,13 +10,16 @@ public class tablaprueba {
     private String nombre;
     @Column
     private int edad;
+    @Column
+    private String apellidos;
 
     public tablaprueba() {
     }
 
-    public tablaprueba(String nombre, int edad) {
+    public tablaprueba(String nombre, int edad, String apellidos) {
         this.nombre = nombre;
         this.edad = edad;
+        this.apellidos = apellidos;
     }
 
     public String getNombre() {
@@ -33,5 +36,13 @@ public class tablaprueba {
 
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 }
