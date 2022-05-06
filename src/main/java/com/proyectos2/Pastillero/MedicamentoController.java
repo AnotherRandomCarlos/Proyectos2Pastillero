@@ -36,7 +36,6 @@ public class MedicamentoController {
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
-
     /*Funcion para modificar medicamento*/
     @PutMapping(path = "/modificarMedicamento",
             consumes = MediaType.APPLICATION_JSON_VALUE,
