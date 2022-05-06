@@ -6,6 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.PrimitiveIterator;
@@ -62,17 +63,21 @@ public class UsuarioController {
 
 
     /*Funcion para encontrar usuarios que cumplan condicion*/
-    @GetMapping("/encontrarUsuarios")
-    public List<Usuario> encontrar(){
+    @GetMapping("/encontrarUsuarios/{nombre}")
+    public List<Usuario> encontrar(@PathVariable String nombre){
 
-        Optional<pruebaid> usuario = null;
+        List <Usuario> lista = repository.findAll();
 
-        List<Usuario> usuarios = repository.findByName("Carlos");
-        //List<Usuario> usuarios = null;
+        List <Usuario> lista2 = new ArrayList<Usuario>();
 
-        return usuarios;
+        for(Usuario user : lista) {
+            if(user.getNombre().equals(nombre)){
+                lista2.add(user);
+            }
+        }
+
+        return lista2;
     }
-
 
 
 }
