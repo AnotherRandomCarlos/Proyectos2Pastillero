@@ -67,7 +67,8 @@ public class UsuarioController {
 
         Optional<pruebaid> usuario = null;
 
-        List<Usuario> usuarios = repository.findByName("Carlos");
+        //List<Usuario> usuarios = repository.findByName("Carlos");
+        List<Usuario> usuarios = null;
 
         return usuarios;
     }
