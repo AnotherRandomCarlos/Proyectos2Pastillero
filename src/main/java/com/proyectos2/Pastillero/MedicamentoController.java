@@ -15,13 +15,12 @@ import java.util.List;
 public class MedicamentoController {
 
     @Autowired
-    private MedicamentoRepository repository;
+    private MedicamentoRepository repository2;
 
     @GetMapping("/obtenerMedicamentos")
     public List<Medicamento> obtener(){
 
-        //List <Medicamento> lista = repository.findAll();
-        List <Medicamento> lista = null;
+        List <Medicamento> lista = repository2.findAll();
 
         return lista;
     }
@@ -32,7 +31,7 @@ public class MedicamentoController {
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity aniadirMedicamento (@RequestBody Medicamento nuevoMedicamento) {
 
-        repository.save(nuevoMedicamento);
+        repository2.save(nuevoMedicamento);
 
         return new ResponseEntity(HttpStatus.CREATED);
     }
@@ -44,7 +43,7 @@ public class MedicamentoController {
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity modificarMedicamento (@RequestBody Medicamento medicamentoModificado) {
 
-        repository.save(medicamentoModificado);
+        repository2.save(medicamentoModificado);
 
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
@@ -55,7 +54,7 @@ public class MedicamentoController {
     @DeleteMapping(path = "/eliminarMedicamento/{id}")
     public ResponseEntity eliminarUsuario (@PathVariable int id) {
 
-        repository.deleteById(id);
+        repository2.deleteById(id);
 
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
@@ -65,7 +64,7 @@ public class MedicamentoController {
     @GetMapping("/encontrarMedicamentos/{user_id}")
     public List<Medicamento> encontrar(@PathVariable int user_id){
 
-        List <Medicamento> lista = repository.findAll();
+        List <Medicamento> lista = repository2.findAll();
 
         List <Medicamento> lista2 = new ArrayList<Medicamento>();
 
