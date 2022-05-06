@@ -20,14 +20,11 @@ public class MedicamentoController {
 
         Medicamento medicamento = new Medicamento("Paracetamol",200);
 
-
         repository.delete(medicamento);
 
         List<Medicamento> medicamentos = repository.findAll();
 
 
-
-        String hola = "Hola mundo";
 
         return medicamentos;
     }
