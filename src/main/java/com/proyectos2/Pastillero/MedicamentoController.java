@@ -24,7 +24,7 @@ public class MedicamentoController {
 
         List<Medicamento> medicamentos = repository.findAll();
 
-        medicamentos.add(new Medicamento("JAJAS",70));
+        //medicamentos.add(new Medicamento("JAJAS",70));
 
         return medicamentos;
     }
