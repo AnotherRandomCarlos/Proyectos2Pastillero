@@ -10,14 +10,17 @@ import java.util.PrimitiveIterator;
 public class UsuarioController {
 
     @Autowired
-    private PilotosRepository repository2;
+    private Tabla10Repository repository2;
 
     @GetMapping("/saludo2")
-    public String saludo(){
+    public List<tablaprueba> saludo(){
 
         //Usuario usuario = new Usuario(10, "nombreprueba", "apellidosprueba", "carloxa49",  "12345");
 
         //repository.delete(medicamento);
+
+        List<tablaprueba> lista = repository2.findAll();
+        
 
         //List<Piloto> usuarios = repository2.findAll();
         //Prueba prueba = new Prueba("10","holabbdd");
@@ -28,6 +31,6 @@ public class UsuarioController {
 
         //usuarios.add(usuario);
 
-        return "hola";
+        return lista;
     }
 }
