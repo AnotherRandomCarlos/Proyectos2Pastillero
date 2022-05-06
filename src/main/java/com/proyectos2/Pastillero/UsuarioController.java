@@ -20,6 +20,9 @@ public class UsuarioController {
         //repository.delete(medicamento);
 
         List<Prueba> usuarios = repository2.findAll();
+        Prueba prueba = new Prueba("10","holabbdd");
+
+        repository2.save(prueba);
 
         //medicamentos.add(new Medicamento("JAJAS",70));
 
