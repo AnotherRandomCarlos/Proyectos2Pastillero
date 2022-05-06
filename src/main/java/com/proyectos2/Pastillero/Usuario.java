@@ -3,10 +3,10 @@ package com.proyectos2.Pastillero;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Usuario")
+@Table(name="usuario10")
 public class Usuario {
     @Id
-    private Integer id_usuario;
+    private int id_usuario;
     @Column
     private String nombre;
     @Column
@@ -19,7 +19,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Integer id_usuario, String nombre, String apellidos, String nombre_usuario, String contrasenia) {
+    public Usuario(int id_usuario, String nombre, String apellidos, String nombre_usuario, String contrasenia) {
         this.id_usuario = id_usuario;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -27,11 +27,11 @@ public class Usuario {
         this.contrasenia = contrasenia;
     }
 
-    public Integer getId_usuario() {
+    public int getId_usuario() {
         return id_usuario;
     }
 
-    public void setId_usuario(Integer id_usuario) {
+    public void setId_usuario(int id_usuario) {
         this.id_usuario = id_usuario;
     }
 
