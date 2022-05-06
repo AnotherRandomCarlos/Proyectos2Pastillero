@@ -18,7 +18,7 @@ public class MedicamentoController {
     private MedicamentoRepository repository2;
 
     @GetMapping("/obtenerMedicamentos")
-    public List<Medicamento> obtener(){
+    public List<Medicamento> obtenerMedicamentos(){
 
         List <Medicamento> lista = repository2.findAll();
 
@@ -47,7 +47,7 @@ public class MedicamentoController {
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 
-    
+
     /*Funcion para eliminar medicamento por su id*/
     @DeleteMapping(path = "/eliminarMedicamento/{id}")
     public ResponseEntity eliminarUsuario (@PathVariable int id) {
@@ -60,7 +60,7 @@ public class MedicamentoController {
 
     /*Funcion para encontrar medicamento que cumplan condicion de user id*/
     @GetMapping("/encontrarMedicamentos/{user_id}")
-    public List<Medicamento> encontrar(@PathVariable int user_id){
+    public List<Medicamento> encontrarMedicamentos(@PathVariable int user_id){
 
         List <Medicamento> lista = repository2.findAll();
 

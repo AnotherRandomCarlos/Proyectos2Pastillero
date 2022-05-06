@@ -18,7 +18,7 @@ public class UsuarioController {
     private UsuarioRepository repository;
 
     @GetMapping("/obtenerUsuarios")
-    public List<Usuario> obtener(){
+    public List<Usuario> obtenerUsuarios(){
 
         List <Usuario> lista = repository.findAll();
 
@@ -62,7 +62,7 @@ public class UsuarioController {
 
     /*Funcion para encontrar usuarios que cumplan condicion*/
     @GetMapping("/encontrarUsuarios/{nombre}")
-    public List<Usuario> encontrar(@PathVariable String nombre){
+    public List<Usuario> encontrarUsuarios(@PathVariable String nombre){
 
         List <Usuario> lista = repository.findAll();
 
