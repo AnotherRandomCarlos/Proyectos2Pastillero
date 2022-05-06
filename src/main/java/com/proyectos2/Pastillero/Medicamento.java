@@ -3,7 +3,7 @@ package com.proyectos2.Pastillero;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Medicamento")
+@Table(name="Medicamentos")
 public class Medicamento {
 
     @Id
