@@ -8,15 +8,23 @@ import javax.persistence.*;
 public class Prueba {
 
     @Id
+    private int id;
     private String nombre;
-    private int edad;
 
     public Prueba() {
     }
 
-    public Prueba(String nombre, int edad) {
+    public Prueba(int id, String nombre) {
+        this.id = id;
         this.nombre = nombre;
-        this.edad = edad;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -27,19 +35,11 @@ public class Prueba {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
     @Override
     public String toString() {
         return "Prueba{" +
-                "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
                 '}';
     }
 }
