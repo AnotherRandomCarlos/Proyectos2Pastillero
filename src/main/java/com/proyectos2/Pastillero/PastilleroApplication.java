@@ -24,10 +24,10 @@ public class PastilleroApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 
 
-		Medicamento medicamento = new Medicamento("Paracetamol",200);
+		//Medicamento medicamento = new Medicamento("Paracetamol",200);
 
 
-		repository.delete(medicamento);
+		//repository.delete(medicamento);
 
 		List<Medicamento> medicamentos = repository.findAll();
 
