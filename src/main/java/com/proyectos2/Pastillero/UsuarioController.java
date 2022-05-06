@@ -76,11 +76,23 @@ public class UsuarioController {
     public ResponseEntity aniadirUsuario (@RequestBody pruebaid nuevoUsuario) {
 
 
-
         repository.save(nuevoUsuario);
 
 
         return new ResponseEntity(HttpStatus.CREATED);
+    }
+
+    /*Funcion para modificar usuario*/
+    @PutMapping(path = "/modificarUsuario",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity modificarUsuario (@RequestBody pruebaid usuarioModificado) {
+
+
+
+        repository.save(usuarioModificado);
+
+        return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 
 
