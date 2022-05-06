@@ -14,7 +14,28 @@ import java.util.PrimitiveIterator;
 public class UsuarioController {
 
     @Autowired
-    private pruebaidRepository repository;
+    private UsuarioRepository repository;
+
+
+
+
+    @GetMapping("/obtenerUsuarios")
+    public List<Usuario> obtener(){
+
+        List <Usuario> lista = repository.findAll();
+
+        return lista;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
     @GetMapping("/saludo2")
@@ -26,10 +47,10 @@ public class UsuarioController {
 //
 //        repository2.save(usuario);
 
-        List <pruebaid> lista = repository.findAll();
+        //List <pruebaid> lista = repository.findAll();
 
 
-
+        List <pruebaid> lista = null;
 
         return lista;
     }
@@ -40,7 +61,7 @@ public class UsuarioController {
         pruebaid usuarionuevo = new pruebaid("roberto",20);
 
 
-        repository.save(usuarionuevo);
+        //repository.save(usuarionuevo);
 
 
         return;
@@ -49,8 +70,9 @@ public class UsuarioController {
     @GetMapping("/saludo4")
     public Optional<pruebaid> saludo4(){
 
-        Optional<pruebaid> usuario = repository.findById(2);
+        //Optional<pruebaid> usuario = repository.findById(2);
 
+        Optional<pruebaid> usuario = null;
 
         return usuario;
     }
@@ -76,7 +98,7 @@ public class UsuarioController {
     public ResponseEntity aniadirUsuario (@RequestBody pruebaid nuevoUsuario) {
 
 
-        repository.save(nuevoUsuario);
+        //repository.save(nuevoUsuario);
 
 
         return new ResponseEntity(HttpStatus.CREATED);
@@ -90,7 +112,7 @@ public class UsuarioController {
 
 
 
-        repository.save(usuarioModificado);
+        //repository.save(usuarioModificado);
 
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }

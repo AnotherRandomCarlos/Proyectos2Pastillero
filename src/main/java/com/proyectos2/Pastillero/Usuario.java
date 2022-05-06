@@ -3,9 +3,15 @@ package com.proyectos2.Pastillero;
 import javax.persistence.*;
 
 @Entity
-@Table(name="usuario10")
+@Table(name="tabla_usuario")
 public class Usuario {
     @Id
+    @SequenceGenerator(name="tabla_usuario_id_usuario_seq",
+            sequenceName="tabla_usuario_id_usuario_seq",
+            allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator="tabla_usuario_id_usuario_seq")
+    @Column(updatable = false)
     private int id_usuario;
     @Column
     private String nombre;
@@ -19,8 +25,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int id_usuario, String nombre, String apellidos, String nombre_usuario, String contrasenia) {
-        this.id_usuario = id_usuario;
+    public Usuario(String nombre, String apellidos, String nombre_usuario, String contrasenia) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nombre_usuario = nombre_usuario;
@@ -29,10 +34,6 @@ public class Usuario {
 
     public int getId_usuario() {
         return id_usuario;
-    }
-
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
     }
 
     public String getNombre() {
