@@ -10,17 +10,17 @@ import java.util.PrimitiveIterator;
 public class UsuarioController {
 
     @Autowired
-    private CorreoRepository repository2;
+    private PilotosRepository repository2;
 
     @GetMapping("/saludo2")
-    public List<correo> saludo(){
+    public List<Piloto> saludo(){
 
         //Usuario usuario = new Usuario(10, "nombreprueba", "apellidosprueba", "carloxa49",  "12345");
 
         //repository.delete(medicamento);
 
-        List<correo> usuarios = repository2.findAll();
-        Prueba prueba = new Prueba("10","holabbdd");
+        List<Piloto> usuarios = repository2.findAll();
+        //Prueba prueba = new Prueba("10","holabbdd");
 
         //repository2.save(prueba);
 
