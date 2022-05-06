@@ -13,13 +13,13 @@ public class UsuarioController {
     private PilotosRepository repository2;
 
     @GetMapping("/saludo2")
-    public List<Piloto> saludo(){
+    public String saludo(){
 
         //Usuario usuario = new Usuario(10, "nombreprueba", "apellidosprueba", "carloxa49",  "12345");
 
         //repository.delete(medicamento);
 
-        List<Piloto> usuarios = repository2.findAll();
+        //List<Piloto> usuarios = repository2.findAll();
         //Prueba prueba = new Prueba("10","holabbdd");
 
         //repository2.save(prueba);
@@ -28,6 +28,6 @@ public class UsuarioController {
 
         //usuarios.add(usuario);
 
-        return usuarios;
+        return "hola";
     }
 }
