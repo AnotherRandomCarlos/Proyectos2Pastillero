@@ -14,6 +14,8 @@ public class Medicamento {
     @Column(updatable = false)
     private int id_medicamento;
     @Column
+    private int id_usuario;
+    @Column
     private String nombre;
     @Column
     private String descripcion;
@@ -30,7 +32,9 @@ public class Medicamento {
     public Medicamento() {
     }
 
-    public Medicamento( String nombre, String descripcion, String dias_semana, int horas_entre_toma, int pastillas_toma, int pastillas_caja) {
+    public Medicamento(int id_usuario, String nombre, String descripcion, String dias_semana, int horas_entre_toma,
+                       int pastillas_toma, int pastillas_caja) {
+        this.id_usuario = id_usuario;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.dias_semana = dias_semana;
@@ -43,6 +47,13 @@ public class Medicamento {
         return id_medicamento;
     }
 
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
 
     public String getNombre() {
         return nombre;
@@ -90,18 +101,5 @@ public class Medicamento {
 
     public void setPastillas_caja(int pastillas_caja) {
         this.pastillas_caja = pastillas_caja;
-    }
-
-    @Override
-    public String toString() {
-        return "Medicamento{" +
-                "id_medicamento=" + id_medicamento +
-                ", nombre='" + nombre + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", dias_semana='" + dias_semana + '\'' +
-                ", horas_entre_toma=" + horas_entre_toma +
-                ", pastillas_toma=" + pastillas_toma +
-                ", pastillas_caja=" + pastillas_caja +
-                '}';
     }
 }
