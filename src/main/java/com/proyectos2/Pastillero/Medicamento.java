@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Medicamento {
 
     @Id
-    private int id_medicamento;
+    private long id_medicamento;
     private int id_usuario;
     private String nombre;
     private String descripcion;
@@ -19,7 +19,7 @@ public class Medicamento {
     public Medicamento() {
     }
 
-    public Medicamento(int id_medicamento, int id_usuario, String nombre, String descripcion, String dias_semana, int horas_entre_toma, int pastillas_toma, int pastillas_caja) {
+    public Medicamento(long id_medicamento, int id_usuario, String nombre, String descripcion, String dias_semana, int horas_entre_toma, int pastillas_toma, int pastillas_caja) {
         this.id_medicamento = id_medicamento;
         this.id_usuario = id_usuario;
         this.nombre = nombre;
@@ -30,7 +30,7 @@ public class Medicamento {
         this.pastillas_caja = pastillas_caja;
     }
 
-    public int getId_medicamento() {
+    public long getId_medicamento() {
         return id_medicamento;
     }
 
