@@ -68,7 +68,7 @@ public class MedicamentoController {
         List <Medicamento> lista2 = new ArrayList<Medicamento>();
 
         for(Medicamento medicamento : lista) {
-            if(medicamento.getId_usuario()==user_id){
+            if(true){
                 lista2.add(medicamento);
             }
         }
