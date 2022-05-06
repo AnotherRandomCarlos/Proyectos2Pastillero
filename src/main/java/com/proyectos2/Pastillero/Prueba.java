@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Prueba {
 
     @Id
-    private int id;
+    private Integer id;
     private String nombre;
 
     public Prueba() {
