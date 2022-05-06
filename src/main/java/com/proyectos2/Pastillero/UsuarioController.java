@@ -31,6 +31,10 @@ public class UsuarioController {
 
         //usuarios.add(usuario);
 
+        tablaprueba usuario = new tablaprueba("loco", 12, "loco apellido");
+        
+        repository2.save(usuario);
+
         return lista;
     }
 }
