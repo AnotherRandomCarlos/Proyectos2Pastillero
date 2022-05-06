@@ -77,4 +77,14 @@ public class NotificacionController {
         return notificacionEncontrada;
     }
 
+    /*Funcion para encontrar la notificacion que cumpla la condicion*/
+    @GetMapping("/prueba/{id_usuario}/{nombre}")
+    public String pruebaMultiple(@PathVariable int id_usuario,@PathVariable String nombre){
+
+        String numeroId = Integer.toString(id_usuario);
+        String retorno = numeroId + nombre;
+
+        return retorno;
+    }
+
 }
