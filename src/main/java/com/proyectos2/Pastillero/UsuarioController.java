@@ -4,25 +4,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
+import java.util.PrimitiveIterator;
 
 @RestController
 public class UsuarioController {
 
     @Autowired
-    private UsuarioRepository repository2;
+    private PrueaRepository repository2;
 
     @GetMapping("/saludo2")
-    public List<Usuario> saludo(){
+    public List<Prueba> saludo(){
 
         Usuario usuario = new Usuario(10, "nombreprueba", "apellidosprueba", "carloxa49",  "12345");
 
         //repository.delete(medicamento);
 
-        List<Usuario> usuarios = repository2.findAll();
+        List<Prueba> usuarios = repository2.findAll();
 
         //medicamentos.add(new Medicamento("JAJAS",70));
 
-        usuarios.add(usuario);
+        //usuarios.add(usuario);
 
         return usuarios;
     }

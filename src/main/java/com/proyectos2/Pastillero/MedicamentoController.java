@@ -18,7 +18,7 @@ public class MedicamentoController {
     @GetMapping("/saludo")
     public List<Medicamento> saludo(){
 
-        Medicamento medicamento = new Medicamento(10, 4, "medicamento prueba", "descripcion","LMX", 2,1,50);
+        Medicamento medicamento = new Medicamento(10, 4, "medicamento Prueba", "descripcion","LMX", 2,1,50);
 
         //repository.delete(medicamento);
 
