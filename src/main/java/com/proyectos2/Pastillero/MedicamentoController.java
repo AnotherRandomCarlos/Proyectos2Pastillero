@@ -47,8 +47,7 @@ public class MedicamentoController {
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 
-
-
+    
     /*Funcion para eliminar medicamento por su id*/
     @DeleteMapping(path = "/eliminarMedicamento/{id}")
     public ResponseEntity eliminarUsuario (@PathVariable int id) {
