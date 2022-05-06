@@ -10,19 +10,19 @@ import java.util.PrimitiveIterator;
 public class UsuarioController {
 
     @Autowired
-    private PrueaRepository repository2;
+    private CorreoRepository repository2;
 
     @GetMapping("/saludo2")
-    public List<Prueba> saludo(){
+    public List<correo> saludo(){
 
-        Usuario usuario = new Usuario(10, "nombreprueba", "apellidosprueba", "carloxa49",  "12345");
+        //Usuario usuario = new Usuario(10, "nombreprueba", "apellidosprueba", "carloxa49",  "12345");
 
         //repository.delete(medicamento);
 
-        List<Prueba> usuarios = repository2.findAll();
+        List<correo> usuarios = repository2.findAll();
         Prueba prueba = new Prueba("10","holabbdd");
 
-        repository2.save(prueba);
+        //repository2.save(prueba);
 
         //medicamentos.add(new Medicamento("JAJAS",70));
 
