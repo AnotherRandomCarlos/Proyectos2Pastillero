@@ -8,14 +8,12 @@ public class Piloto {
 
     @Id
     private String Nombre;
-    private String Apellidos;
 
     public Piloto() {
     }
 
-    public Piloto(String nombre, String apellidos) {
+    public Piloto(String nombre) {
         Nombre = nombre;
-        Apellidos = apellidos;
     }
 
     public String getNombre() {
@@ -26,12 +24,6 @@ public class Piloto {
         Nombre = nombre;
     }
 
-    public String getApellidos() {
-        return Apellidos;
-    }
 
-    public void setApellidos(String apellidos) {
-        Apellidos = apellidos;
-    }
 
 }
