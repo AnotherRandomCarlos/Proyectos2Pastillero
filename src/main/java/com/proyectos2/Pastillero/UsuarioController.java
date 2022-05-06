@@ -20,7 +20,7 @@ public class UsuarioController {
         //repository.delete(medicamento);
 
         List<tablaprueba> lista = repository2.findAll();
-        
+
 
         //List<Piloto> usuarios = repository2.findAll();
         //Prueba prueba = new Prueba("10","holabbdd");

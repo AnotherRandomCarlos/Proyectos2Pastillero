@@ -8,6 +8,7 @@ public class tablaprueba {
 
     @Id
     private String nombre;
+    @Column
     private int edad;
 
     public tablaprueba() {
