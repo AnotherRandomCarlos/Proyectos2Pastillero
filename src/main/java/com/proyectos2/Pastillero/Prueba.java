@@ -5,13 +5,11 @@ import javax.persistence.*;
 import javax.print.DocFlavor;
 
 @Entity
-@Table(name="Prueba")
+@Table(name="Prueba2")
 public class Prueba {
 
     @Id
-    @Column(name = "id")
     private String id;
-    @Column(name = "nombre")
     private String nombre;
 
     public Prueba() {
