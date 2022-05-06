@@ -7,7 +7,12 @@ import javax.persistence.*;
 public class Medicamento {
 
     @Id
+    @Column(
+            name = "id_medicamento"
+    )
     private long id_medicamento;
+
+
     private int id_usuario;
     private String nombre;
     private String descripcion;
