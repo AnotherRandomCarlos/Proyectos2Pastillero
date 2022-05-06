@@ -27,4 +27,16 @@ public class UsuarioController {
 
         return lista;
     }
+
+    @GetMapping("/saludo3")
+    public void saludo2(){
+
+        pruebaid usuarionuevo = new pruebaid("roberto",20);
+        
+
+        repository.save(usuarionuevo);
+
+
+        return;
+    }
 }
