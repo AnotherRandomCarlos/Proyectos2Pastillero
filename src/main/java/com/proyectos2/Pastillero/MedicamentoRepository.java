@@ -2,6 +2,6 @@ package com.proyectos2.Pastillero;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MedicamentoRepository extends JpaRepository<Medicamento, Long> {
+public interface MedicamentoRepository extends JpaRepository<Medicamento, Integer> {
 
 }

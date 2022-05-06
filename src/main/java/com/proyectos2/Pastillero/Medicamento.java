@@ -10,7 +10,7 @@ public class Medicamento {
     @Column(
             name = "id_medicamento"
     )
-    private long id_medicamento;
+    private Integer id_medicamento;
 
     @Column(
             name = "id_usuario"
@@ -50,7 +50,7 @@ public class Medicamento {
     public Medicamento() {
     }
 
-    public Medicamento(long id_medicamento, int id_usuario, String nombre, String descripcion, String dias_semana, int horas_entre_toma, int pastillas_toma, int pastillas_caja) {
+    public Medicamento(Integer id_medicamento, int id_usuario, String nombre, String descripcion, String dias_semana, int horas_entre_toma, int pastillas_toma, int pastillas_caja) {
         this.id_medicamento = id_medicamento;
         this.id_usuario = id_usuario;
         this.nombre = nombre;
@@ -61,7 +61,7 @@ public class Medicamento {
         this.pastillas_caja = pastillas_caja;
     }
 
-    public long getId_medicamento() {
+    public Integer getId_medicamento() {
         return id_medicamento;
     }
 
