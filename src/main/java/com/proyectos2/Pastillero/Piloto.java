@@ -11,17 +11,14 @@ public class Piloto {
     @Column
     private String Apellidos;
     @Column
-    private int Edad;
-    @Column
     private String Correo;
 
     public Piloto() {
     }
 
-    public Piloto(String nombre, String apellidos, int edad, String correo) {
+    public Piloto(String nombre, String apellidos, String correo) {
         Nombre = nombre;
         Apellidos = apellidos;
-        Edad = edad;
         Correo = correo;
     }
 
@@ -41,13 +38,6 @@ public class Piloto {
         Apellidos = apellidos;
     }
 
-    public int getEdad() {
-        return Edad;
-    }
-
-    public void setEdad(int edad) {
-        Edad = edad;
-    }
 
     public String getCorreo() {
         return Correo;
