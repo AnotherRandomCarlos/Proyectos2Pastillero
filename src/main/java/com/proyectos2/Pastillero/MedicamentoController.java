@@ -20,7 +20,8 @@ public class MedicamentoController {
     @GetMapping("/obtenerMedicamentos")
     public List<Medicamento> obtener(){
 
-        List <Medicamento> lista = repository.findAll();
+        //List <Medicamento> lista = repository.findAll();
+        List <Medicamento> lista = null;
 
         return lista;
     }

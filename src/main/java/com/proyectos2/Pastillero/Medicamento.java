@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 @Table(name="tabla_medicamento")
 public class Medicamento {
-
     @Id
     @SequenceGenerator(name="tabla_medicamento_id_medicamento_seq",
             sequenceName="tabla_medicamento_id_medicamento_seq",
