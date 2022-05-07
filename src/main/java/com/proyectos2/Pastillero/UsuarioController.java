@@ -81,7 +81,7 @@ public class UsuarioController {
     /*Funcion para el login que te devuelve el user id si es correcto el usuario y contrasenia
     * de lo contrario devuelve -1*/
     @GetMapping("/loginUsuario/{nombre_usuario}/{contrasenia}")
-    public int pruebaMultiple(@PathVariable String nombre_usuario,@PathVariable String contrasenia){
+    public Usuario pruebaMultiple(@PathVariable String nombre_usuario,@PathVariable String contrasenia){
 
         List <Usuario> lista = repository.findAll();
 
@@ -94,11 +94,11 @@ public class UsuarioController {
         }
 
         if(user_encontrado == null){
-            return -1;
+            return null;
         }
 
         else{
-            return user_encontrado.getId_usuario();
+            return user_encontrado;
         }
 
     }
