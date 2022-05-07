@@ -92,14 +92,8 @@ public class UsuarioController {
                 user_encontrado = user;
             }
         }
-
-        if(user_encontrado == null){
-            return null;
-        }
-
-        else{
-            return user_encontrado;
-        }
+        
+        return user_encontrado;
 
     }
 
